@@ -14,7 +14,23 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			author: z.string(),
 		}),
 });
 
-export const collections = { blog };
+const authors = defineCollection({
+	loader: glob({ base: './src/content/authors', pattern: '**/*.md' }),
+	schema: z.object({
+		name: z.string(),
+		bio: z.string(),
+		avatar: z.string(),
+		socialLinks: z.array(
+			z.object({
+				label: z.string(),
+				url: z.string().url(),
+			}),
+		),
+	}),
+});
+
+export const collections = { blog, authors };
