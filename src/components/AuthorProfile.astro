@@ -1,0 +1,59 @@
+---
+interface Props {
+	name: string;
+	bio: string;
+	avatar: string;
+	socialLinks: { label: string; url: string }[];
+}
+
+const { name, bio, avatar, socialLinks } = Astro.props;
+---
+
+<section class="author-profile" aria-labelledby="author-heading">
+	<img class="author-avatar" src={avatar} alt={`${name}'s avatar`} width="96" height="96" />
+	<div class="author-details">
+		<h2 id="author-heading">About {name}</h2>
+		<p>{bio}</p>
+		<ul class="social-links">
+			{socialLinks.map(({ label, url }) => (
+				<li><a href={url} rel="me" target="_blank">{label}</a></li>
+			))}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.author-profile {
+		display: flex;
+		gap: 1.25rem;
+		align-items: flex-start;
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+	.author-avatar {
+		flex: 0 0 auto;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+	.author-details h2 {
+		margin-bottom: 0.5rem;
+		font-size: 1.25em;
+	}
+	.author-details p {
+		margin: 0 0 0.75rem;
+	}
+	.social-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	@media (max-width: 480px) {
+		.author-profile {
+			flex-direction: column;
+		}
+	}
+</style>
