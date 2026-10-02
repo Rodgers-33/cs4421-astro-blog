@@ -30,7 +30,7 @@
     "eslint": "^10.11.0",
     "eslint-plugin-astro": "^1.7.0",
     "jiti": "^2.7.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^5.0.1"
   }
 }
