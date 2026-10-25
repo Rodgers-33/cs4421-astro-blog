@@ -1,49 +1,308 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title="Mboga Fresh Tanzania | Fresh Vegetables"
+			description="Discover fresh vegetables for households, shops, and food businesses in Tanzania."
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			:global(*) {
+				box-sizing: border-box;
+			}
+
+			:global(body) {
+				margin: 0;
+				color: #233326;
+				background: #fbfcf8;
+				font-family: Arial, Helvetica, sans-serif;
+				line-height: 1.6;
+			}
+
+			.hero {
+				padding: 5rem 1.5rem;
+				background: linear-gradient(135deg, #e6f3df, #f7f9e9);
+			}
+
+			.hero-inner,
+			.section-inner {
+				width: min(1100px, 100%);
+				margin: 0 auto;
+			}
+
+			.eyebrow {
+				color: #387442;
+				font-size: 0.85rem;
+				font-weight: 700;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+			}
+
+			h1 {
+				max-width: 760px;
+				margin: 0.6rem 0 1rem;
+				font-size: clamp(2.4rem, 6vw, 4.5rem);
+				line-height: 1.08;
+			}
+
+			.hero p {
+				max-width: 650px;
+				font-size: 1.1rem;
+				color: #4d5d4e;
+			}
+
+			.actions {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.button {
+				display: inline-block;
+				padding: 0.8rem 1.2rem;
+				border: 2px solid #276738;
+				border-radius: 7px;
+				background: #276738;
+				color: white;
+				font-weight: 700;
+				text-decoration: none;
+			}
+
+			.button.secondary {
+				background: transparent;
+				color: #276738;
+			}
+
+			section {
+				padding: 4rem 1.5rem;
+			}
+
+			.section-heading {
+				max-width: 700px;
+				margin-bottom: 2rem;
+			}
+
+			h2 {
+				margin-bottom: 0.5rem;
+				font-size: clamp(1.8rem, 4vw, 2.7rem);
+				line-height: 1.2;
+			}
+
+			.muted {
+				color: #627064;
+			}
+
+			.cards {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+				gap: 1.2rem;
+			}
+
+			.card {
+				padding: 1.5rem;
+				border: 1px solid #e2e9dc;
+				border-radius: 12px;
+				background: white;
+			}
+
+			.card .emoji {
+				font-size: 2.4rem;
+			}
+
+			.card h3 {
+				margin: 0.7rem 0 0.4rem;
+			}
+
+			.promise {
+				background: #edf4e8;
+			}
+
+			.promise-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: 1.5rem;
+			}
+
+			.promise-item h3 {
+				margin-bottom: 0.3rem;
+			}
+
+			.closing {
+				padding: 3rem 1.5rem;
+				text-align: center;
+			}
+
+			.closing p {
+				max-width: 650px;
+				margin: 0.8rem auto 1.5rem;
+			}
+
+			@media (max-width: 600px) {
+				.hero {
+					padding: 3.5rem 1.2rem;
+				}
+
+				section {
+					padding: 3rem 1.2rem;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
+
 		<main>
-			<h1>🧑‍🚀 Hello, reader!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<div class="hero-inner">
+					<span class="eyebrow">Fresh produce • Tanzania</span>
+					<h1>Fresh vegetables for a healthier everyday life.</h1>
+					<p>
+						Welcome to Mboga Fresh Tanzania. Explore everyday
+						vegetables, learn how to choose and store fresh produce,
+						and discover simple ideas for bringing more goodness to
+						your table.
+					</p>
+					<div class="actions">
+						<a class="button" href="#vegetables"
+							>Explore vegetables</a
+						>
+						<a class="button secondary" href="/blog/"
+							>Read our blog</a
+						>
+					</div>
+				</div>
+			</section>
+
+			<section id="vegetables">
+				<div class="section-inner">
+					<div class="section-heading">
+						<span class="eyebrow">Explore our selection</span>
+						<h2>Everyday vegetables</h2>
+						<p class="muted">
+							Discover popular vegetables used in Tanzanian homes
+							and kitchens. Availability can vary by season and
+							location.
+						</p>
+					</div>
+
+					<div class="cards">
+						<article class="card">
+							<div class="emoji" aria-hidden="true">🍅</div>
+							<h3>Tomatoes</h3>
+							<p class="muted">
+								A kitchen essential for sauces, stews, and fresh
+								salads.
+							</p>
+						</article>
+
+						<article class="card">
+							<div class="emoji" aria-hidden="true">🧅</div>
+							<h3>Onions</h3>
+							<p class="muted">
+								A versatile ingredient that adds flavour to
+								everyday meals.
+							</p>
+						</article>
+
+						<article class="card">
+							<div class="emoji" aria-hidden="true">🥬</div>
+							<h3>Mchicha and leafy greens</h3>
+							<p class="muted">
+								Leafy vegetables that make a welcome addition to
+								balanced meals.
+							</p>
+						</article>
+
+						<article class="card">
+							<div class="emoji" aria-hidden="true">🥕</div>
+							<h3>Carrots</h3>
+							<p class="muted">
+								Colourful vegetables for snacks, salads, and
+								cooked dishes.
+							</p>
+						</article>
+
+						<article class="card">
+							<div class="emoji" aria-hidden="true">🥬</div>
+							<h3>Cabbage</h3>
+							<p class="muted">
+								A popular choice for side dishes, salads, and
+								family meals.
+							</p>
+						</article>
+
+						<article class="card">
+							<div class="emoji" aria-hidden="true">🫑</div>
+							<h3>Sweet peppers</h3>
+							<p class="muted">
+								Add colour and flavour to stir-fries, sauces,
+								and salads.
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="promise">
+				<div class="section-inner">
+					<div class="section-heading">
+						<span class="eyebrow">Our approach</span>
+						<h2>Good food starts with good choices.</h2>
+						<p class="muted">
+							We want to make learning about vegetables simple and
+							useful for households, food businesses, and anyone
+							who enjoys cooking.
+						</p>
+					</div>
+
+					<div class="promise-grid">
+						<div class="promise-item">
+							<h3>🥗 Everyday inspiration</h3>
+							<p>
+								Find ideas for using familiar vegetables in your
+								daily meals.
+							</p>
+						</div>
+						<div class="promise-item">
+							<h3>🌱 Practical information</h3>
+							<p>
+								Learn about selection, storage, preparation, and
+								seasonal produce.
+							</p>
+						</div>
+						<div class="promise-item">
+							<h3>🇹🇿 Local focus</h3>
+							<p>
+								Explore vegetables and food topics relevant to
+								everyday life in Tanzania.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="closing">
+				<div class="section-inner">
+					<h2>Learn more about fresh vegetables.</h2>
+					<p class="muted">
+						Visit our blog for helpful articles, or find out more
+						about the purpose behind this website.
+					</p>
+					<div class="actions" style="justify-content: center;">
+						<a class="button" href="/blog/">Explore the blog</a>
+						<a class="button secondary" href="/about/">About us</a>
+					</div>
+				</div>
+			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
