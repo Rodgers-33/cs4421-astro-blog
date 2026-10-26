@@ -46,11 +46,11 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       - name: Install Project & CDK Dependencies
-        working-directory: ./hello-cdk
+        working-directory: cdk
         run: npm ci
 
       - name: Deploy Infrastructure & ECS Service with AWS CDK
-        working-directory: ./hello-cdk
+        working-directory: cdk
         run: npx cdk deploy HelloEcsStack --require-approval never --context imageTag=${{ github.sha }}
         env:
           OPENWEATHER_API_KEY: ${{ github.event.inputs.fault_injection == 'true' && 'FAIL_INJECTION_TRIGGERED' || secrets.OPENWEATHER_API_KEY }}
