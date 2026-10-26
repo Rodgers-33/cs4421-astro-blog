@@ -9,7 +9,7 @@ on:
         description: 'Set to true to inject a breaking configuration for SRE testing'
         required: false
         default: 'false'
-
+        
 jobs:
   deploy:
     runs-on: ubuntu-latest
