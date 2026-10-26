@@ -37,7 +37,7 @@ jobs:
       - name: Build, tag, and push Docker image to ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: astro-blog-repository
+          ECR_REPOSITORY: my-astro-blog
           IMAGE_TAG: ${{ github.sha }}
           OPENWEATHER_API_KEY: ${{ github.event.inputs.fault_injection == 'true' && 'FAIL_INJECTION_TRIGGERED' || secrets.OPENWEATHER_API_KEY }}
         run: |
