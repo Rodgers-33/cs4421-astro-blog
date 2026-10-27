@@ -1,215 +1,96 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2024'
+
+title: 'How to Keep Vegetables Fresh and Reduce Waste'
+description: 'Learn practical ways to store vegetables, reduce food waste, and get more value from your fresh produce in Tanzania.'
+pubDate: 'Oct 26 2026'
 heroImage: '../../assets/blog-placeholder-1.jpg'
 author: rodgers-richard
----
+-----------------------
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+# How to Keep Vegetables Fresh and Reduce Waste
 
-## Headings
+Fresh vegetables make everyday meals more colourful and nutritious. However, vegetables can lose their quality if they are not stored or handled properly.
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+Whether you are shopping for your family, running a restaurant, or buying produce for a retail business, a few simple habits can help you reduce waste and make better use of the vegetables you purchase.
 
-# H1
+## 1. Buy the Right Quantity
 
-## H2
+One of the simplest ways to reduce waste is to plan your purchases before shopping.
 
-### H3
+* Make a list of the vegetables you need for upcoming meals.
+* Consider how many people you are cooking for.
+* Buy smaller quantities of highly perishable vegetables if you cannot use them quickly.
+* Check what you already have before purchasing more.
 
-#### H4
+For restaurants and retailers, tracking how much produce is used each day can help improve purchasing decisions.
 
-##### H5
+## 2. Handle Leafy Vegetables Carefully
 
-###### H6
+Mchicha and sukuma wiki are popular leafy vegetables that can wilt relatively quickly.
 
-## Paragraph
+To help maintain their quality:
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+* Remove leaves that are damaged or spoiled.
+* Keep the vegetables in a clean container or suitable bag.
+* Refrigerate them when possible.
+* Avoid leaving them in direct sunlight or excessive heat.
+* Wash them thoroughly with safe, clean water before preparation.
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+For the best quality, use leafy vegetables promptly after purchase.
 
-## Images
+## 3. Store Tomatoes Properly
 
-### Syntax
+Tomatoes are used in many Tanzanian dishes, including sauces, stews, and vegetable preparations.
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
+Choose tomatoes according to when you plan to use them. Handle them gently to avoid bruising, and remove any tomatoes showing signs of spoilage so they do not affect nearby produce.
 
-### Output
+Storage depends on the ripeness of the tomatoes and how soon you intend to use them. Avoid crushing them under heavy items.
 
-![blog placeholder](../../assets/blog-placeholder-about.jpg)
+## 4. Keep Onions in a Suitable Environment
 
-## Blockquotes
+Whole, dry onions generally store best in a cool, dry, well-ventilated place.
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+Avoid keeping them in damp conditions, as moisture can encourage spoilage. Check stored onions regularly and remove any that become soft or rotten.
 
-### Blockquote without attribution
+Once an onion has been cut, place the unused portion in a clean, covered container in the refrigerator.
 
-#### Syntax
+## 5. Store Carrots and Cabbage Carefully
 
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
+Carrots and cabbage can be useful ingredients for several meals.
 
-#### Output
+For carrots, remove damaged pieces and store them under suitable cool conditions. Keep cabbage in a clean storage area, remove damaged outer leaves when necessary, and protect cut cabbage in a covered container in the refrigerator.
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+Always check produce before use and discard vegetables that show clear signs of spoilage.
 
-### Blockquote with attribution
+## 6. Plan Meals Around What You Have
 
-#### Syntax
+Planning meals can help households use vegetables before they deteriorate.
 
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
+For example:
 
-#### Output
+* Use leafy greens in a meal planned for the same day or soon afterward.
+* Combine carrots, cabbage, and other vegetables in a mixed vegetable dish.
+* Use ripe tomatoes in sauces or stews.
+* Plan the next shopping trip around the vegetables remaining at home.
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
+For businesses, simple stock records can help identify which vegetables sell quickly and which are frequently left unused.
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+## 7. Reduce Waste in Vegetable Businesses
 
-## Tables
+Restaurants, shops, market vendors, and other produce businesses can benefit from a few basic practices:
 
-### Syntax
+1. Record incoming quantities and daily sales.
+2. Store different vegetables according to their needs.
+3. Check produce regularly for damage or spoilage.
+4. Use older suitable stock before newer stock.
+5. Review purchasing quantities based on demand.
 
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
+These practices can help businesses manage their stock more effectively. Produce that is unsafe or spoiled should not be sold or consumed.
 
-### Output
+## Make Every Purchase Count
 
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
+Keeping vegetables fresh starts with thoughtful shopping, careful handling, and appropriate storage. Small changes can help households and businesses reduce avoidable waste and get better value from the produce they buy.
 
-## Code Blocks
+Mboga Fresh Tanzania aims to help people explore vegetable categories and learn more about the fresh-produce marketplace.
 
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+Explore our vegetable marketplace to see the types of produce featured on the platform. Remember to confirm current availability, prices, and purchasing arrangements before making an order.

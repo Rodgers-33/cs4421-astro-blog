@@ -8,301 +8,584 @@ import Header from "../components/Header.astro";
 <html lang="en">
 	<head>
 		<BaseHead
-			title="Mboga Fresh Tanzania | Fresh Vegetables"
-			description="Discover fresh vegetables for households, shops, and food businesses in Tanzania."
+			title="Mboga Fresh Tanzania | Discover Fresh Vegetables"
+			description="Explore vegetables and discover farmers and suppliers serving Dar es Salaam through Mboga Fresh Tanzania."
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<style>
 			:global(*) {
 				box-sizing: border-box;
 			}
-
+			:global(html) {
+				scroll-behavior: smooth;
+			}
 			:global(body) {
 				margin: 0;
-				color: #233326;
-				background: #fbfcf8;
+				color: #20352a;
+				background: #fffdf8;
 				font-family: Arial, Helvetica, sans-serif;
-				line-height: 1.6;
+				line-height: 1.65;
 			}
-
+			.wrap {
+				width: min(1120px, calc(100% - 2.5rem));
+				margin-inline: auto;
+			}
 			.hero {
-				padding: 5rem 1.5rem;
-				background: linear-gradient(135deg, #e6f3df, #f7f9e9);
+				padding: clamp(4rem, 8vw, 7rem) 0;
+				background:
+					radial-gradient(
+						circle at 88% 20%,
+						rgba(244, 185, 66, 0.24),
+						transparent 22rem
+					),
+					linear-gradient(125deg, #edf6e8, #fbf8e9 68%, #fff4df);
 			}
-
-			.hero-inner,
-			.section-inner {
-				width: min(1100px, 100%);
-				margin: 0 auto;
+			.hero-grid {
+				display: grid;
+				grid-template-columns: 1.15fr 0.85fr;
+				align-items: center;
+				gap: clamp(2rem, 5vw, 4.5rem);
 			}
-
 			.eyebrow {
-				color: #387442;
-				font-size: 0.85rem;
-				font-weight: 700;
-				letter-spacing: 0.12em;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.55rem;
+				color: #287342;
+				font-size: 0.78rem;
+				font-weight: 800;
+				letter-spacing: 0.13em;
 				text-transform: uppercase;
 			}
-
+			.eyebrow::before {
+				width: 24px;
+				height: 2px;
+				content: "";
+				background: #e1a72f;
+			}
+			h1,
+			h2,
+			h3,
+			p {
+				margin-top: 0;
+			}
 			h1 {
-				max-width: 760px;
-				margin: 0.6rem 0 1rem;
-				font-size: clamp(2.4rem, 6vw, 4.5rem);
-				line-height: 1.08;
+				max-width: 700px;
+				margin: 0.8rem 0 1.1rem;
+				font-size: clamp(2.6rem, 6vw, 5rem);
+				line-height: 1.02;
+				letter-spacing: -0.045em;
 			}
-
-			.hero p {
-				max-width: 650px;
-				font-size: 1.1rem;
-				color: #4d5d4e;
+			h1 span {
+				color: #287342;
 			}
-
+			.hero-copy {
+				max-width: 620px;
+				color: #536456;
+				font-size: clamp(1.03rem, 2vw, 1.16rem);
+			}
 			.actions {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 1rem;
-				margin-top: 2rem;
+				gap: 0.8rem;
+				margin-top: 1.8rem;
 			}
-
 			.button {
-				display: inline-block;
-				padding: 0.8rem 1.2rem;
-				border: 2px solid #276738;
-				border-radius: 7px;
-				background: #276738;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 48px;
+				padding: 0.75rem 1.15rem;
+				border: 2px solid #287342;
+				border-radius: 8px;
+				background: #287342;
 				color: white;
-				font-weight: 700;
+				font-weight: 750;
 				text-decoration: none;
+				transition:
+					transform 0.18s ease,
+					background 0.18s ease;
 			}
-
+			.button:hover {
+				transform: translateY(-2px);
+				background: #1f5e35;
+			}
 			.button.secondary {
 				background: transparent;
-				color: #276738;
+				color: #287342;
 			}
-
+			.button.secondary:hover {
+				background: rgba(40, 115, 66, 0.08);
+			}
+			.produce-art {
+				position: relative;
+				display: grid;
+				place-items: center;
+				min-height: 340px;
+				border: 1px solid rgba(40, 115, 66, 0.12);
+				border-radius: 30px;
+				background: rgba(255, 255, 255, 0.58);
+				box-shadow: 0 24px 70px rgba(44, 76, 45, 0.09);
+			}
+			.produce-art::before,
+			.produce-art::after {
+				position: absolute;
+				content: "";
+				border-radius: 50%;
+				background: rgba(225, 167, 47, 0.17);
+			}
+			.produce-art::before {
+				width: 190px;
+				height: 190px;
+				top: 18px;
+				right: 18px;
+			}
+			.produce-art::after {
+				width: 120px;
+				height: 120px;
+				bottom: 20px;
+				left: 18px;
+				background: rgba(40, 115, 66, 0.12);
+			}
+			.produce-emoji {
+				position: relative;
+				z-index: 1;
+				font-size: clamp(5rem, 12vw, 8rem);
+				line-height: 1.3;
+				text-align: center;
+				filter: drop-shadow(0 12px 10px rgba(42, 58, 32, 0.12));
+			}
+			.art-caption {
+				position: absolute;
+				z-index: 2;
+				right: 1rem;
+				bottom: 1rem;
+				padding: 0.65rem 0.9rem;
+				border-radius: 10px;
+				background: white;
+				box-shadow: 0 8px 24px rgba(34, 54, 34, 0.08);
+				font-size: 0.84rem;
+				font-weight: 700;
+			}
 			section {
-				padding: 4rem 1.5rem;
+				padding: clamp(3.5rem, 7vw, 5.5rem) 0;
 			}
-
 			.section-heading {
-				max-width: 700px;
+				max-width: 680px;
 				margin-bottom: 2rem;
 			}
-
 			h2 {
-				margin-bottom: 0.5rem;
-				font-size: clamp(1.8rem, 4vw, 2.7rem);
-				line-height: 1.2;
+				margin: 0.6rem 0 0.75rem;
+				font-size: clamp(2rem, 4vw, 3rem);
+				line-height: 1.13;
+				letter-spacing: -0.03em;
 			}
-
 			.muted {
-				color: #627064;
+				color: #647166;
 			}
-
-			.cards {
+			.category-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 1rem;
+			}
+			.category {
+				display: flex;
+				gap: 1rem;
+				align-items: flex-start;
+				padding: 1.35rem;
+				border: 1px solid #e6eadf;
+				border-radius: 16px;
+				background: white;
+				box-shadow: 0 8px 24px rgba(37, 61, 40, 0.035);
+			}
+			.category-icon {
+				display: grid;
+				flex: 0 0 54px;
+				width: 54px;
+				height: 54px;
+				place-items: center;
+				border-radius: 14px;
+				background: #eff6e9;
+				font-size: 1.8rem;
+			}
+			.category h3 {
+				margin: 0.1rem 0 0.3rem;
+				font-size: 1.05rem;
+			}
+			.category p {
+				margin: 0;
+				color: #647166;
+				font-size: 0.93rem;
+			}
+			.soft-section {
+				background: #f0f6eb;
+			}
+			.steps {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 1.25rem;
+			}
+			.step {
+				padding: 1.5rem;
+				border-radius: 16px;
+				background: white;
+				border: 1px solid #e3ebdd;
+			}
+			.step-number {
+				display: inline-grid;
+				place-items: center;
+				width: 42px;
+				height: 42px;
+				margin-bottom: 1rem;
+				border-radius: 50%;
+				background: #287342;
+				color: white;
+				font-weight: 800;
+			}
+			.step h3 {
+				margin-bottom: 0.45rem;
+			}
+			.step p {
+				margin-bottom: 0;
+				color: #647166;
+			}
+			.audience-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
 				gap: 1.2rem;
 			}
-
-			.card {
-				padding: 1.5rem;
-				border: 1px solid #e2e9dc;
-				border-radius: 12px;
+			.audience {
+				padding: clamp(1.5rem, 4vw, 2.4rem);
+				border-radius: 20px;
+				border: 1px solid #e4e9dd;
 				background: white;
 			}
-
-			.card .emoji {
-				font-size: 2.4rem;
+			.audience.supplier {
+				background: #fff5e3;
+				border-color: #f1e2c2;
 			}
-
-			.card h3 {
-				margin: 0.7rem 0 0.4rem;
+			.audience .symbol {
+				font-size: 2rem;
+				margin-bottom: 0.8rem;
 			}
-
-			.promise {
-				background: #edf4e8;
+			.audience h3 {
+				margin-bottom: 0.5rem;
+				font-size: 1.45rem;
 			}
-
-			.promise-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-				gap: 1.5rem;
+			.audience p {
+				color: #59675b;
 			}
-
-			.promise-item h3 {
-				margin-bottom: 0.3rem;
+			.text-link {
+				color: #287342;
+				font-weight: 800;
+				text-decoration-thickness: 2px;
+				text-underline-offset: 4px;
 			}
-
-			.closing {
-				padding: 3rem 1.5rem;
-				text-align: center;
+			.blog-band {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 2rem;
+				padding: clamp(1.7rem, 4vw, 2.7rem);
+				border-radius: 20px;
+				background: #203f2c;
+				color: white;
 			}
-
-			.closing p {
-				max-width: 650px;
-				margin: 0.8rem auto 1.5rem;
+			.blog-band h2 {
+				max-width: 620px;
+				font-size: clamp(1.8rem, 3vw, 2.5rem);
 			}
-
-			@media (max-width: 600px) {
-				.hero {
-					padding: 3.5rem 1.2rem;
+			.blog-band p {
+				max-width: 620px;
+				margin-bottom: 0;
+				color: #dce8d9;
+			}
+			.blog-band .button {
+				flex-shrink: 0;
+				border-color: #f0c45e;
+				background: #f0c45e;
+				color: #20352a;
+			}
+			.blog-band .button:hover {
+				background: #ffda7d;
+			}
+			.note {
+				margin-top: 1.2rem;
+				font-size: 0.85rem;
+				color: #6b776b;
+			}
+			@media (max-width: 800px) {
+				.hero-grid {
+					grid-template-columns: 1fr;
 				}
-
-				section {
-					padding: 3rem 1.2rem;
+				.produce-art {
+					min-height: 250px;
+				}
+				.category-grid {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+			}
+			@media (max-width: 560px) {
+				.wrap {
+					width: min(100% - 2rem, 1120px);
+				}
+				.category-grid,
+				.steps,
+				.audience-grid {
+					grid-template-columns: 1fr;
+				}
+				.category {
+					padding: 1.1rem;
+				}
+				.blog-band {
+					align-items: flex-start;
+					flex-direction: column;
+				}
+				.actions .button {
+					width: 100%;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				:global(html) {
+					scroll-behavior: auto;
+				}
+				.button {
+					transition: none;
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
-
 		<main>
 			<section class="hero">
-				<div class="hero-inner">
-					<span class="eyebrow">Fresh produce • Tanzania</span>
-					<h1>Fresh vegetables for a healthier everyday life.</h1>
-					<p>
-						Welcome to Mboga Fresh Tanzania. Explore everyday
-						vegetables, learn how to choose and store fresh produce,
-						and discover simple ideas for bringing more goodness to
-						your table.
-					</p>
-					<div class="actions">
-						<a class="button" href="#vegetables"
-							>Explore vegetables</a
+				<div class="wrap hero-grid">
+					<div>
+						<span class="eyebrow"
+							>Karibu • Dar es Salaam, Tanzania</span
 						>
-						<a class="button secondary" href="/blog/"
-							>Read our blog</a
-						>
+						<h1>
+							Fresh vegetables.<br /><span
+								>Better connections.</span
+							>
+						</h1>
+						<p class="hero-copy">
+							Welcome to Mboga Fresh Tanzania — a marketplace
+							concept bringing vegetable buyers and suppliers
+							closer together. Explore everyday produce, discover
+							local sellers, and find inspiration for your kitchen
+							or food business.
+						</p>
+						<div class="actions">
+							<a class="button" href="#categories"
+								>Explore vegetables <span aria-hidden="true"
+									>&nbsp;→</span
+								></a
+							>
+							<a class="button secondary" href="#suppliers"
+								>Join as a supplier</a
+							>
+						</div>
+					</div>
+					<div
+						class="produce-art"
+						role="img"
+						aria-label="Illustration of fresh vegetables including tomatoes, leafy greens, carrots and peppers"
+					>
+						<div class="produce-emoji" aria-hidden="true">
+							🥬 🍅<br />🥕 🧅 🫑
+						</div>
+						<div class="art-caption">
+							Fresh ideas, local roots 🇹🇿
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="vegetables">
-				<div class="section-inner">
+			<section id="categories">
+				<div class="wrap">
 					<div class="section-heading">
-						<span class="eyebrow">Explore our selection</span>
-						<h2>Everyday vegetables</h2>
+						<span class="eyebrow">Explore the produce</span>
+						<h2>Everyday favourites, all in one place.</h2>
 						<p class="muted">
-							Discover popular vegetables used in Tanzanian homes
-							and kitchens. Availability can vary by season and
-							location.
+							From leafy greens to kitchen essentials, discover
+							vegetables commonly enjoyed in Tanzanian homes and
+							professional kitchens. Product and supplier
+							availability may vary.
 						</p>
 					</div>
-
-					<div class="cards">
-						<article class="card">
-							<div class="emoji" aria-hidden="true">🍅</div>
-							<h3>Tomatoes</h3>
-							<p class="muted">
-								A kitchen essential for sauces, stews, and fresh
-								salads.
-							</p>
+					<div class="category-grid">
+						<article class="category">
+							<div class="category-icon" aria-hidden="true">
+								🥬
+							</div><div>
+								<h3>Leafy greens</h3><p>
+									Mchicha, spinach, sukuma wiki and other
+									greens for everyday meals.
+								</p>
+							</div>
 						</article>
-
-						<article class="card">
-							<div class="emoji" aria-hidden="true">🧅</div>
-							<h3>Onions</h3>
-							<p class="muted">
-								A versatile ingredient that adds flavour to
-								everyday meals.
-							</p>
+						<article class="category">
+							<div class="category-icon" aria-hidden="true">
+								🍅
+							</div><div>
+								<h3>Tomatoes & peppers</h3><p>
+									Colourful favourites for sauces, stews,
+									salads and more.
+								</p>
+							</div>
 						</article>
-
-						<article class="card">
-							<div class="emoji" aria-hidden="true">🥬</div>
-							<h3>Mchicha and leafy greens</h3>
-							<p class="muted">
-								Leafy vegetables that make a welcome addition to
-								balanced meals.
-							</p>
+						<article class="category">
+							<div class="category-icon" aria-hidden="true">
+								🧅
+							</div><div>
+								<h3>Kitchen essentials</h3><p>
+									Onions, garlic and potatoes for the
+									foundations of a good meal.
+								</p>
+							</div>
 						</article>
-
-						<article class="card">
-							<div class="emoji" aria-hidden="true">🥕</div>
-							<h3>Carrots</h3>
-							<p class="muted">
-								Colourful vegetables for snacks, salads, and
-								cooked dishes.
-							</p>
+						<article class="category">
+							<div class="category-icon" aria-hidden="true">
+								🥕
+							</div><div>
+								<h3>Root vegetables</h3><p>
+									Carrots, beetroot and sweet potatoes for
+									variety and colour.
+								</p>
+							</div>
 						</article>
-
-						<article class="card">
-							<div class="emoji" aria-hidden="true">🥬</div>
-							<h3>Cabbage</h3>
-							<p class="muted">
-								A popular choice for side dishes, salads, and
-								family meals.
-							</p>
+						<article class="category">
+							<div class="category-icon" aria-hidden="true">
+								🥦
+							</div><div>
+								<h3>Cruciferous vegetables</h3><p>
+									Cabbage, broccoli and cauliflower for
+									versatile cooking.
+								</p>
+							</div>
 						</article>
-
-						<article class="card">
-							<div class="emoji" aria-hidden="true">🫑</div>
-							<h3>Sweet peppers</h3>
-							<p class="muted">
-								Add colour and flavour to stir-fries, sauces,
-								and salads.
-							</p>
+						<article class="category">
+							<div class="category-icon" aria-hidden="true">
+								🌽
+							</div><div>
+								<h3>Seasonal produce</h3><p>
+									Discover other vegetables as they come into
+									season and become available.
+								</p>
+							</div>
 						</article>
 					</div>
+					<p class="note">
+						These are example categories for the marketplace, not
+						live inventory or confirmed supplier listings.
+					</p>
 				</div>
 			</section>
 
-			<section class="promise">
-				<div class="section-inner">
+			<section class="soft-section" id="how-it-works">
+				<div class="wrap">
 					<div class="section-heading">
-						<span class="eyebrow">Our approach</span>
-						<h2>Good food starts with good choices.</h2>
+						<span class="eyebrow">Simple by design</span>
+						<h2>A marketplace that brings people together.</h2>
 						<p class="muted">
-							We want to make learning about vegetables simple and
-							useful for households, food businesses, and anyone
-							who enjoys cooking.
+							Our aim is to make it easier for buyers to discover
+							produce and for sellers to reach potential
+							customers.
 						</p>
 					</div>
-
-					<div class="promise-grid">
-						<div class="promise-item">
-							<h3>🥗 Everyday inspiration</h3>
-							<p>
-								Find ideas for using familiar vegetables in your
-								daily meals.
+					<div class="steps">
+						<article class="step">
+							<span class="step-number">1</span><h3>Explore</h3><p
+							>
+								Browse vegetable categories and learn about
+								produce suited to your home or business.
 							</p>
-						</div>
-						<div class="promise-item">
-							<h3>🌱 Practical information</h3>
-							<p>
-								Learn about selection, storage, preparation, and
-								seasonal produce.
+						</article>
+						<article class="step">
+							<span class="step-number">2</span><h3>
+								Discover suppliers
+							</h3><p>
+								Find out about farmers and vendors who may be
+								able to supply the vegetables you need.
 							</p>
-						</div>
-						<div class="promise-item">
-							<h3>🇹🇿 Local focus</h3>
-							<p>
-								Explore vegetables and food topics relevant to
-								everyday life in Tanzania.
+						</article>
+						<article class="step">
+							<span class="step-number">3</span><h3>Connect</h3><p
+							>
+								Get in touch to discuss product availability,
+								quantities, prices and ordering arrangements.
 							</p>
-						</div>
+						</article>
 					</div>
 				</div>
 			</section>
 
-			<section class="closing">
-				<div class="section-inner">
-					<h2>Learn more about fresh vegetables.</h2>
-					<p class="muted">
-						Visit our blog for helpful articles, or find out more
-						about the purpose behind this website.
-					</p>
-					<div class="actions" style="justify-content: center;">
-						<a class="button" href="/blog/">Explore the blog</a>
-						<a class="button secondary" href="/about/">About us</a>
+			<section id="suppliers">
+				<div class="wrap">
+					<div class="section-heading">
+						<span class="eyebrow">For buyers and sellers</span>
+						<h2>
+							Made for the people who bring food to the table.
+						</h2>
+						<p class="muted">
+							Whether you're planning family meals or sourcing
+							produce for a business, Mboga Fresh Tanzania is
+							designed with your needs in mind.
+						</p>
+					</div>
+					<div class="audience-grid">
+						<article class="audience">
+							<div class="symbol" aria-hidden="true">🛒</div>
+							<h3>Shopping for your home or business?</h3>
+							<p>
+								Explore vegetable types and learn what to look
+								for when choosing fresh produce for family
+								meals, restaurants, hotels or retail.
+							</p>
+							<a class="text-link" href="/blog/"
+								>Read our produce guides →</a
+							>
+						</article>
+						<article class="audience supplier">
+							<div class="symbol" aria-hidden="true">🌱</div>
+							<h3>Are you a farmer or vegetable seller?</h3>
+							<p>
+								We want to help suppliers showcase their produce
+								and connect with potential buyers in the
+								community.
+							</p>
+							<a class="text-link" href="/contact/"
+								>Find out how to get in touch →</a
+							>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="wrap">
+					<div class="blog-band">
+						<div>
+							<span class="eyebrow" style="color:#f0c45e;"
+								>From our blog</span
+							>
+							<h2>Good food starts with good information.</h2>
+							<p>
+								Explore practical ideas for choosing vegetables,
+								storing fresh produce, cooking everyday
+								favourites and learning more about Tanzania's
+								food community.
+							</p>
+						</div>
+						<a class="button" href="/blog/"
+							>Explore the blog <span aria-hidden="true"
+								>&nbsp;→</span
+							></a
+						>
 					</div>
 				</div>
 			</section>
 		</main>
-
 		<Footer />
 	</body>
 </html>
