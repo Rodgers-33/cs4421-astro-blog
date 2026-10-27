@@ -36,9 +36,12 @@ export default defineConfig({
         },
     ],
 
-    output: 'server', // Enables on-demand server rendering 
+    // output: 'server', // Enables on-demand server rendering
 
-    adapter: node({
-        mode: 'standalone',
-    }),
+    // adapter: node({
+    //     mode: 'standalone',
+    // }),
+
+    output: 'static', // Required for CloudFront S3 static hosting
+    //No adapter needed for static SSG deployment
 });

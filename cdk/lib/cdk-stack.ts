@@ -50,6 +50,16 @@ export class StaticSiteStack extends cdk.Stack {
       distributionPaths: ['/*'], // Automatic CloudFront CDN cache invalidation!
     });
 
+    new cdk.CfnOutput(this, 'WebsiteURL', {
+      value: `https://${distribution.distributionDomainName}`,
+      description: 'Public URL of the Mboga Fresh website',
+    });
+
+    new cdk.CfnOutput(this, 'CloudFrontDistributionId', {
+      value: distribution.distributionId,
+      description: 'CloudFront distribution ID',
+    });
+
 
   }
 }

@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN npx astro build --config astro.config.ssr.mjs
 
 # Stage 2: Run the Astro server
 
@@ -17,6 +17,8 @@ FROM node:22-bookworm-slim AS runtime
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=4321
+ARG HEALTH_CHECK_FAIL=false
+ENV HEALTH_CHECK_FAIL=${HEALTH_CHECK_FAIL}
 
 WORKDIR /app
 
