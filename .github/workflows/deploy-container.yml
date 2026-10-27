@@ -9,8 +9,8 @@ on:
         description: 'Set to true to inject a breaking configuration for SRE testing'
         required: false
         default: 'false'
-        
-        
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -41,9 +41,13 @@ jobs:
           ECR_REPOSITORY: my-astro-blog
           IMAGE_TAG: ${{ github.sha }}
           OPENWEATHER_API_KEY: ${{ github.event.inputs.fault_injection == 'true' && 'FAIL_INJECTION_TRIGGERED' || secrets.OPENWEATHER_API_KEY }}
+          HEALTH_CHECK_FAIL: ${{ github.event.inputs.fault_injection == 'true' && 'true' || 'false' }}
         run: |
-          docker build --build-arg OPENWEATHER_API_KEY=$OPENWEATHER_API_KEY -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build \
+          --build-arg OPENWEATHER_API_KEY="$OPENWEATHER_API_KEY" \
+          --build-arg HEALTH_CHECK_FAIL="$HEALTH_CHECK_FAIL" \
+          -t "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" .
+          docker push "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       - name: Install Project & CDK Dependencies
         working-directory: cdk
