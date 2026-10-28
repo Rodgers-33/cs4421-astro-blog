@@ -49,6 +49,9 @@ jobs:
           -t "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" .
           docker push "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
+      - name: Build Static Website for CDK
+        run: npm ci && npm run build
+
       - name: Install Project & CDK Dependencies
         working-directory: cdk
         run: npm ci
